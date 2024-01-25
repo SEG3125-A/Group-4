@@ -7,66 +7,77 @@ var products = [
 		name: "brocoli",
 		vegetarian: true,
 		glutenFree: true,
+		organic : true,
 		price: 1.99
 	},
 	{
 		name: "bread",
 		vegetarian: true,
 		glutenFree: false,
+		organic : false,
 		price: 2.35
 	},
 	{
 		name: "salmon",
 		vegetarian: false,
 		glutenFree: true,
+		organic: true,
 		price: 10.00
 	},
 	{
 		name:"lettuce",
 		vegetarian: true,
 		glutenFree: true,
+		organic: true,
 		price: 5.00
 	},
 	{
 		name:"pretein",
 		vegetatian: false,
 		glutenFree:true,
+		organic: false,
 		price: 75.00
 	},
 	{
 		name: "frozen fruites",
 		vegetarian: true,
 		glutenFree: true,
+		organic: false,
 		price: 7.00
 	},
 	{
 		name: "chiken",
 		vegetarian: false,
 		glutenFree: true,
+		organic: false,
 		price: 20.00
 	},
 	{
 		name: "beef",
 		vegetarian: false,
 		glutenFree: true,
+		organic: false,
 		price : 20.00
 	},
 	{
 		name:"mango",
 		vegetarian: true,
 		glutenFree: true,
+		organic: true,
 		price : 3.00,
 	},
 	{
 		name: "rice",
 		vegetarian: true,
 		glutenFree: true,
+		organic: true,
 		price: 20.00
 	},
 	{
 		name:"Orange juce",
 		vegetarian: true,
 		glutenFree: true,
+		organic: false,
 		price: 9.00
 	}
 ];
@@ -88,6 +99,9 @@ function restrictListProducts(prods, restriction) {
 			
 		}
 		else if (restriction == "None"){
+			product_names.push(prods[i].name +" "+ prods[i].price + "$");	
+		}
+		else if ((restriction == "organic") && (prods[i].glutenFree == true)){
 			product_names.push(prods[i].name +" "+ prods[i].price + "$");
 			
 		}
