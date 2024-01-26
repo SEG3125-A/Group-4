@@ -96,7 +96,7 @@ function restrictListProducts(prods, restriction) {
             product_names.push(prods[i].name + " " + prods[i].price + "$");
         } else if (restriction == "None") {
             product_names.push(prods[i].name + " " + prods[i].price + "$");
-        } else if ((restriction == "organic") && (prods[i].organic == true)) { // Fixed to check for 'organic'
+        } else if ((restriction == "organic") && (prods[i].organic == true)) {
             product_names.push(prods[i].name + " " + prods[i].price + "$");
         }
     }
