@@ -88,28 +88,29 @@ var products = [
 // prices should be included in this list, as well as a sort based on price
 
 function restrictListProducts(prods, restriction) {
-    let product_names = [];
-    for (let i = 0; i < prods.length; i += 1) {
-        if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)) {
-            product_names.push(prods[i].name + " " + prods[i].price + "$");
-        } else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)) {
-            product_names.push(prods[i].name + " " + prods[i].price + "$");
-        } else if (restriction == "None") {
-            product_names.push(prods[i].name + " " + prods[i].price + "$");
-        } else if ((restriction == "organic") && (prods[i].organic == true)) {
-            product_names.push(prods[i].name + " " + prods[i].price + "$");
-        }
-    }
 
-    // Sorting by price
-    product_names.sort((a, b) => {
-        let priceA = parseFloat(a.split(" ")[1]);
-        let priceB = parseFloat(b.split(" ")[1]);
-        return priceA - priceB;
-    });
-
-    return product_names;
+	let productsToShow = [];
+	for (let i = 0; i < prods.length; i += 1) {
+	if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)) {
+	productsToShow.push(prods[i]);
+	} else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)) {
+	productsToShow.push(prods[i]);
+	} else if (restriction == "None") {
+	productsToShow.push(prods[i]);
+	} else if ((restriction == "organic") && (prods[i].organic == true)) {
+	productsToShow.push(prods[i]);}
+	}
+	
+	// Sorting prices
+	productsToShow.sort((a, b) => a.price - b.price);
+	
+	// Creating an array with formatted strings (name + price)
+	let product_names = productsToShow.map(product => `${product.name} ${product.price}$`);
+	
+	return product_names;
 }
+
+
 
 
 // Calculate the total price of items, with received parameter being a list of products

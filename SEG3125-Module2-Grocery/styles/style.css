@@ -35,3 +35,10 @@
   border: 1px solid #3a09dc;
   border-top: none;
 }
+
+/*styling for the signature*/
+.footer{
+  margin-top: auto;
+  align-items: center;
+  color: #000000;
+}
