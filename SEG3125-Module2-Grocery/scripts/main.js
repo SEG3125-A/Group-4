@@ -66,8 +66,12 @@ function populateListProductChoices(slct1, slct2) {
 // The purpose is to build the HTML to be displayed (a Paragraph) 
 // We build a paragraph to contain the list of selected items, and the total price
 
+
+    
+
+
 function selectedItems(){
-	
+
 	var ele = document.getElementsByName("product");
 	var chosenProducts = [];
 	
