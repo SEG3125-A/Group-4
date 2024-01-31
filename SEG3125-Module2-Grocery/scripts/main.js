@@ -67,9 +67,6 @@ function populateListProductChoices(slct1, slct2) {
 // We build a paragraph to contain the list of selected items, and the total price
 
 
-    
-
-
 function selectedItems(){
 
 	var ele = document.getElementsByName("product");
