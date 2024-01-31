@@ -8,56 +8,64 @@ var products = [
 		vegetarian: true,
 		glutenFree: true,
 		organic : true,
-		price: 1.99
+		price: 1.99,
+		image:"resources/brocoli.png"
 	},
 	{
 		name: "bread",
 		vegetarian: true,
 		glutenFree: false,
 		organic : false,
-		price: 2.35
+		price: 2.35,
+		image:"resources/bread.jpg"
 	},
 	{
 		name: "salmon",
 		vegetarian: false,
 		glutenFree: true,
 		organic: true,
-		price: 10.00
+		price: 10.00,
+		image:"resources/salmon.jpg"
 	},
 	{
 		name:"lettuce",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		price: 5.00
+		price: 5.00,
+		image:"resources/lettuce.jpg"
 	},
 	{
 		name:"pretein",
 		vegetatian: false,
 		glutenFree:true,
 		organic: false,
-		price: 75.00
+		price: 75.00,
+		image:"resources/vegaProteinPowder.jpg"
 	},
 	{
 		name: "frozen fruites",
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		price: 7.00
+		price: 7.00,
+		image:"resources/frozenFruits.jpg"
 	},
 	{
 		name: "chiken",
 		vegetarian: false,
 		glutenFree: true,
 		organic: false,
-		price: 20.00
+		price: 20.00,
+		image:"resources/chiken.jpg"
 	},
 	{
 		name: "beef",
 		vegetarian: false,
 		glutenFree: true,
 		organic: false,
-		price : 20.00
+		price : 20.00,
+		image:"resources/beef.jpg"
 	},
 	{
 		name:"mango",
@@ -65,20 +73,23 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		price : 3.00,
+		image:"resources/mango.jpg"
 	},
 	{
 		name: "rice",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		price: 20.00
+		price: 20.00,
+		image:"resources/rice.jpg"
 	},
 	{
 		name:"Orange juce",
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		price: 9.00
+		price: 9.00,
+		image:"resources/orangeJuice.jpg"
 	}
 ];
 	
