@@ -50,6 +50,8 @@ function populateListProductChoices(slct1, slct2) {
 		checkbox.name = "product";
 		checkbox.value = productName;
 		s2.appendChild(checkbox);
+
+
 		
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
@@ -67,7 +69,15 @@ function populateListProductChoices(slct1, slct2) {
 // We build a paragraph to contain the list of selected items, and the total price
 
 
-function selectedItems(){
+
+
+
+
+
+
+
+
+ function selectedItems(){
 
 	var ele = document.getElementsByName("product");
 	var chosenProducts = [];
@@ -92,4 +102,7 @@ function selectedItems(){
 	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
 		
 }
+
+
+
 

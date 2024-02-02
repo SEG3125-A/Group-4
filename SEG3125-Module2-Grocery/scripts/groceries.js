@@ -57,7 +57,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		price: 20.00,
-		image:"resources/chiken.jpg"
+		image: "resources/chiken.jpg"
 	},
 	{
 		name: "beef",
@@ -116,21 +116,23 @@ function restrictListProducts(prods, restriction) {
 	productsToShow.sort((a, b) => a.price - b.price);
 	
 	// Creating an array with formatted strings (name + price)
-	let product_names = productsToShow.map(product => `${product.name} ${product.price}$`);
-	
-	return product_names;
+	let product_html = productsToShow.map(product => 
+		`${product.name} ${product.price + "$"} <img src="${product.image}" alt="${product.name}">`);
+
+	return product_html;
 }
+
+
 
 
 
 
 // Calculate the total price of items, with received parameter being a list of products
 function getTotalPrice(chosenProducts) {
-	totalPrice = 0;
-	for (let i=0; i<products.length; i+=1) {
-		if (chosenProducts.indexOf(products[i].name) > -1){
+	let totalPrice = 0;
+	for (let i=0; i<chosenProducts.length; i+=1) {
 			totalPrice += products[i].price;
-		}
 	}
 	return totalPrice;
 }
+
