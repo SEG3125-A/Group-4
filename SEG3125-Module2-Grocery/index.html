@@ -8,6 +8,7 @@
   </div>
    
 </head>
+ 
 
 <body style="background-color: #f5eded;">
 
@@ -17,6 +18,7 @@
   <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
   <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
 </div>
+
 
 <!-- Tab content -->
 <div id="Client" class="tabcontent">
@@ -37,6 +39,29 @@
   <h3>Your targeted products</h3>
   <p>We preselected products based on your restrictions.</p>
 
+  <!-- Search Bar -->
+  <div class="productsearch">
+    <input id="searchbar"
+           onkeyup="search_products()"
+           type="text" name="search"
+           placeholder="Search products..">
+  
+    <ul id='list'>
+        <li class="products">Mango</li>
+        <li class="products">Lettuce</li>
+        <li class="products">Frozen Fruits</li>
+        <li class="products">Brocoli</li>
+        <li class="products">Orange Juice</li>
+        <li class="products">Salmon</li>
+        <li class="products">Chicken</li>
+        <li class="products">Beef</li>
+        <li class="products">Protein</li>
+        <li class="products">Rice</li>
+    </ul>
+  </div>
+  
+
+  
   <!-- adding a toggle switch and the it's title-->
   <div class="flex-container">
     <div>
