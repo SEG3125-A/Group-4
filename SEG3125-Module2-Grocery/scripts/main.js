@@ -103,6 +103,31 @@ function populateListProductChoices(slct1, slct2) {
 		
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+document.addEventListener("DOMContentLoaded", function () {
+    // Existing code for DOMContentLoaded event listener
+
+    // Add code for the price range slider
+    const priceRange = document.getElementById("priceRange");
+    const priceOutput = document.getElementById("priceOutput");
+
+    // Update the initial value displayed next to the slider
+    priceOutput.textContent = priceRange.value;
+
+    // Update the value displayed as the user interacts with the slider
+    priceRange.addEventListener("input", function () {
+        priceOutput.textContent = priceRange.value;
+        updateProductList(); // Call the function to update the product list based on the new price range
+    });
+
+    // Function to update the product list based on the selected options
+    function updateProductList() {
+        const dietSelect = document.getElementById("dietSelect");
+        populateListProductChoices(dietSelect.id, "displayProduct");
+    }
+});
+>>>>>>> 12d4b05 (added slider)

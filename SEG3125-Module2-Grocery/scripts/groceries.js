@@ -109,7 +109,11 @@ var products = [
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(prods, restriction) {
+// given restrictions provided, make a reduced list of products
+// prices should be included in this list, as well as a sort based on price
+
+
+function restrictListProducts(prods, restriction, priceRange) {
 
 	let productsToShow = [];
 	for (let i = 0; i < prods.length; i += 1) {
@@ -120,11 +124,17 @@ function restrictListProducts(prods, restriction) {
 	} else if (restriction == "None") {
 	productsToShow.push(prods[i]);
 	} else if ((restriction == "organic") && (prods[i].organic == true)) {
+
 	productsToShow.push(prods[i]);
     }else if ((restriction == "wheat") && (prods[i].wheat == false)) {
 		productsToShow.push(prods[i]);}
 
+
+	if (prods[i].price <= priceRange) {
+		productsToShow.push(prods[i]);}
+
 	}
+}
 	
 	// Sorting prices
 	productsToShow.sort((a, b) => a.price - b.price);
@@ -134,8 +144,7 @@ function restrictListProducts(prods, restriction) {
 		`${product.name} ${product.price + "$"} <img src="${product.image}" alt="${product.name}">`);
 
 	return product_html;
-}
-
+	
 
 
 
@@ -149,4 +158,20 @@ function getTotalPrice(chosenProducts) {
 	}
 	return totalPrice;
 }
+
+// This function is called when the price range slider changes
+function updateProductRange() {
+	// Get the value of the price range slider
+	var priceRange = document.getElementById('productSlider').value;
+  
+	// Get the selected diet category
+	var dietSelect = document.getElementById('dietSelect');
+	var selectedDiet = dietSelect.options[dietSelect.selectedIndex].value;
+  
+	// Update the displayed products based on the selected diet and price range
+	populateListProductChoices('dietSelect', 'displayProduct', selectedDiet, priceRange);
+  }
+  
+  // Attach the updateProductRange function to the input event of the slider
+  document.getElementById('productSlider').addEventListener('input', updateProductRange);
 
