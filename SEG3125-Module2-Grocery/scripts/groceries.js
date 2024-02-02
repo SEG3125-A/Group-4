@@ -9,6 +9,7 @@ var products = [
 		glutenFree: true,
 		organic : true,
 		price: 1.99,
+		wheat: false,
 		image:"resources/brocoli.png"
 	},
 	{
@@ -17,6 +18,7 @@ var products = [
 		glutenFree: false,
 		organic : false,
 		price: 2.35,
+		wheat: true,
 		image:"resources/bread.jpg"
 	},
 	{
@@ -25,6 +27,7 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		price: 10.00,
+		wheat: false,
 		image:"resources/salmon.jpg"
 	},
 	{
@@ -33,6 +36,7 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		price: 5.00,
+		wheat: false,
 		image:"resources/lettuce.jpg"
 	},
 	{
@@ -41,6 +45,7 @@ var products = [
 		glutenFree:true,
 		organic: false,
 		price: 75.00,
+		wheat: false,
 		image:"resources/vegaProteinPowder.jpg"
 	},
 	{
@@ -49,6 +54,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		price: 7.00,
+		wheat: false,
 		image:"resources/frozenFruits.jpg"
 	},
 	{
@@ -57,6 +63,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		price: 20.00,
+		wheat: false,
 		image: "resources/chiken.jpg"
 	},
 	{
@@ -65,6 +72,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		price : 20.00,
+		wheat: false,
 		image:"resources/beef.jpg"
 	},
 	{
@@ -73,6 +81,7 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		price : 3.00,
+		wheat: false,
 		image:"resources/mango.jpg"
 	},
 	{
@@ -81,6 +90,7 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		price: 20.00,
+		wheat: false,
 		image:"resources/rice.jpg"
 	},
 	{
@@ -89,6 +99,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		price: 9.00,
+		wheat: false,
 		image:"resources/orangeJuice.jpg"
 	}
 ];
@@ -109,7 +120,10 @@ function restrictListProducts(prods, restriction) {
 	} else if (restriction == "None") {
 	productsToShow.push(prods[i]);
 	} else if ((restriction == "organic") && (prods[i].organic == true)) {
-	productsToShow.push(prods[i]);}
+	productsToShow.push(prods[i]);
+    }else if ((restriction == "wheat") && (prods[i].wheat == false)) {
+		productsToShow.push(prods[i]);}
+
 	}
 	
 	// Sorting prices
